@@ -22,4 +22,15 @@ for city in cities:
     print(city)
     print()
 
+#Index and returns(pop)
+hosts = ["kca", "zetech", "jkuat"]
+removed = hosts.pop(2)
+print(removed)
+print(hosts)
+print()
 
+#.sort() - sorts a list in place
+hosts = ["web03", "web01", "web02"]
+hosts.sort()
+print(hosts)
+print()

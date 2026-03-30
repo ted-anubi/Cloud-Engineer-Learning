@@ -1,25 +1,37 @@
-#HOST INVENTORY TOOL
-#Skills: Lists, loops, Conditionals, input, f-strings
+#HOST INVENTORY TOOL - STEP 1
 
 hosts = []
-
 while True:
-    print("\n--- Host Inventory ---")
+    print("\n=== Host Inventory Tool ===")
     print("1. Add host")
-    print("2. View inventory")
-    print("3. Remove host")
-    print("4. Quit")
+    print("2. View hosts")
+    print("3. Quit")
+    print("4. Remove host")
 
-    choice = input("Select option: ")
+    choice = input("Enter a selection: ")
 
     if choice == "1":
-        print("Add host selected")
+        hostname = input("Enter hostname: ")
+        hosts.append(hostname)
+        print("Host added.")
+
     elif choice == "2":
-        print("View inventory selected")
-    elif choice == "3":
-        print("Remove host selected")
+        if len(hosts) == 0:
+            print("No hosts yet")
+        else:
+            for host in hosts:
+                print(host)
+
     elif choice == "4":
-        print("Goodbye!")
+        hostname = input("Enter hostname to remove: ")
+        try:
+            hosts.remove(hostname)
+            print("Host removed.")
+        except ValueError:
+            print("Host not found.")
+
+    elif choice == "3":
+        print("Goodbye.")
         break
-    else:
-        print("Invalid option.Try again.")
+else:
+    print("Invalid option")
